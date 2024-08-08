@@ -8,7 +8,7 @@
         /* Allgemeine Stile für den Body */
         body {
             display: flex;
-            flex-direction: column; /* Stapelt Elemente untereinander für mobile Ansicht */
+            flex-direction: column; /* Stapelt Elemente untereinander */
             padding: 20px;
             margin: 0;
             box-sizing: border-box;
@@ -18,14 +18,14 @@
 
         /* Container für den Calculator */
         #calculator {
-            width: 100%; /* Volle Breite auf mobilen Geräten */
+            width: 100%; /* Volle Breite */
             box-sizing: border-box;
-            margin-bottom: 20px; /* Abstand zwischen Calculator und Richtwert-Text */
+            margin-bottom: 20px; /* Abstand zum nächsten Element */
         }
 
         /* Container für den Richtwert-Abschnitt */
         #guidelines {
-            width: 100%; /* Volle Breite auf mobilen Geräten */
+            width: 100%; /* Volle Breite */
             box-sizing: border-box;
             padding: 20px;
             background-color: #ffffff;
@@ -61,18 +61,15 @@
         /* Media Queries für kleinere Bildschirme */
         @media (min-width: 768px) {
             body {
-                flex-direction: row; /* Nebeneinander für größere Bildschirme */
+                flex-direction: column; /* Für größere Bildschirme nicht nebeneinander */
             }
 
             #calculator {
-                width: 60%; /* 60% der Breite auf größeren Bildschirmen */
-                float: left; /* Links ausrichten auf größeren Bildschirmen */
+                margin-bottom: 20px; /* Abstand zum Richtwert-Text */
             }
 
             #guidelines {
-                width: 35%; /* 35% der Breite auf größeren Bildschirmen */
-                float: right; /* Rechts ausrichten auf größeren Bildschirmen */
-                margin-left: 5%; /* Abstand zwischen Calculator und Richtwert-Text */
+                margin-top: 20px; /* Abstand zum Calculator */
             }
         }
     </style>
