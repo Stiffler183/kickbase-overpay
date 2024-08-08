@@ -92,6 +92,9 @@
             <label for="strategy-surcharge">Strategieaufschlag:</label>
             <input type="number" step="0.01" id="strategy-surcharge" placeholder="Strategieaufschlag in Millionen" required><br>
 
+            <label for="max-percentage">Maximaler Prozentaufschlag:</label>
+            <input type="number" step="0.01" id="max-percentage" placeholder="Maximaler Prozentaufschlag" required><br>
+
             <button type="button" onclick="calculateOverpay()">Berechnen</button>
         </form>
 
@@ -106,12 +109,16 @@
                 const performanceFactor = parseFloat(document.getElementById('performance-factor').value);
                 const demandFactor = parseFloat(document.getElementById('demand-factor').value);
                 const strategySurcharge = parseFloat(document.getElementById('strategy-surcharge').value);
+                const maxPercentage = parseFloat(document.getElementById('max-percentage').value);
 
-                // Berechnung
-                const overpay = marketValue * performanceFactor * demandFactor + strategySurcharge;
+                // Berechnung des Overpay
+                let overpay = marketValue * performanceFactor * demandFactor + strategySurcharge;
+
+                // Maximaler Aufschlag berücksichtigen
+                const maxOverpay = marketValue * (1 + maxPercentage / 100);
 
                 // Ergebnis anzeigen
-                document.getElementById('result').innerText = `Berechneter Overpay: ${overpay.toFixed(2)} Millionen`;
+                document.getElementById('result').innerText = `Berechneter Overpay: ${Math.min(overpay, maxOverpay).toFixed(2)} Millionen`;
             }
         </script>
     </div>
