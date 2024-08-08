@@ -99,5 +99,115 @@
             document.getElementById('ergebnis').innerText = `Empfohlenes Overpay: ${overpay.toFixed(2)} Millionen`;
         }
     </script>
+        <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kickbase Overpay Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Dein bestehender Code für den Overpay-Calculator -->
+    
+    <div id="calculator">
+        <!-- Calculator-Formular und Ergebnisse -->
+    </div>
+
+    <!-- Abschnitt für Richtwerte und zusätzliche Informationen -->
+    <section id="guidelines">
+        <h2>Richtwerte für den maximalen Aufschlag</h2>
+        <ul>
+            <li><strong>Standard-Spieler:</strong> Maximaler Aufschlag von 10% bis 20% des aktuellen Marktwerts.</li>
+            <li><strong>Top-Spieler:</strong> Maximaler Aufschlag von 20% bis 30% des aktuellen Marktwerts.</li>
+            <li><strong>Extrem seltene Fälle:</strong> Maximaler Aufschlag von über 30% des aktuellen Marktwerts.</li>
+        </ul>
+
+        <h3>Leistungsfaktor</h3>
+        <p>Der Leistungsfaktor repräsentiert deine Erwartungen an die zukünftige Leistung eines Spielers. Dieser Faktor sollte die derzeitige Form, das Potenzial und die kommenden Spiele des Spielers widerspiegeln. Er hilft dabei, den "wahren Wert" eines Spielers über seinen aktuellen Marktwert hinaus einzuschätzen.</p>
+        <h4>Leistungsfaktor-Bereiche</h4>
+        <ul>
+            <li><strong>0,9 - 1,0: Unterdurchschnittlich</strong><br>
+            Beschreibung: Der Spieler ist derzeit in schlechter Form oder hat ungünstige bevorstehende Spiele.<br>
+            Anwendung: Sollte für Spieler verwendet werden, die in einem Leistungstief stecken oder gegen starke Gegner spielen.</li>
+
+            <li><strong>1,0 - 1,1: Durchschnittlich</strong><br>
+            Beschreibung: Der Spieler zeigt eine solide Leistung, jedoch ohne große Ausschläge nach oben.<br>
+            Anwendung: Für Spieler, die eine konstante, aber nicht herausragende Performance liefern.</li>
+
+            <li><strong>1,1 - 1,3: Überdurchschnittlich</strong><br>
+            Beschreibung: Der Spieler ist in guter Form, erzielt regelmäßig Punkte, und hat vorteilhafte Spiele vor sich.<br>
+            Anwendung: Ideal für Spieler, die aktuell stark performen oder eine positive Prognose haben.</li>
+
+            <li><strong>1,3 - 1,5: Hervorragend</strong><br>
+            Beschreibung: Der Spieler befindet sich in Topform oder steht vor einem sehr leichten Spielplan.<br>
+            Anwendung: Verwenden für Spieler, die einen signifikanten Einfluss auf das Team haben und oft entscheidend sind.</li>
+
+            <li><strong>1,5+: Außergewöhnlich</strong><br>
+            Beschreibung: Ein Superstar in einer Phase außerordentlicher Leistung.<br>
+            Anwendung: Wird selten verwendet, aber bei sehr hohen Erwartungen und sicherer Leistung gerechtfertigt.</li>
+        </ul>
+
+        <h4>Faktoren zur Bestimmung</h4>
+        <ul>
+            <li>Statistiken: Tore, Assists, Einsätze, Passgenauigkeit, Zweikampfquote, etc.</li>
+            <li>Vergangene Leistungen: Wie hat der Spieler in den letzten Spielen abgeschnitten?</li>
+            <li>Kommende Spiele: Wie schwer sind die bevorstehenden Gegner?</li>
+            <li>Verletzungen/Rückkehr: Gibt es medizinische Updates, die die Form beeinflussen könnten?</li>
+        </ul>
+
+        <h3>Bedarfsfaktor</h3>
+        <p>Der Bedarfsfaktor reflektiert die Dringlichkeit des Spielers für dein Team. Je höher der Bedarf, desto mehr kann es Sinn machen, extra zu zahlen. Dies hängt von der aktuellen Teamzusammensetzung und der Marktverfügbarkeit ab.</p>
+        <h4>Bedarfsfaktor-Bereiche</h4>
+        <ul>
+            <li><strong>0,8 - 1,0: Niedrig</strong><br>
+            Beschreibung: Du hast bereits ausreichend Spieler für die Position oder der Spieler ist ein langfristiger Ersatz.<br>
+            Anwendung: Verwende dies für Spieler, die du nur als Backup benötigst.</li>
+
+            <li><strong>1,0 - 1,2: Mittel</strong><br>
+            Beschreibung: Ein nützlicher Spieler, der jedoch nicht unbedingt sofort benötigt wird.<br>
+            Anwendung: Spieler, die Potenzial haben, aber nicht zwingend notwendig sind.</li>
+
+            <li><strong>1,2 - 1,4: Hoch</strong><br>
+            Beschreibung: Du benötigst dringend Verstärkung, möglicherweise aufgrund von Verletzungen oder Sperren.<br>
+            Anwendung: Ideal für Lücken in der Startaufstellung oder kritische Positionen.</li>
+
+            <li><strong>1,4 - 1,6: Sehr hoch</strong><br>
+            Beschreibung: Der Spieler ist entscheidend für deine Strategie und kurzfristige Ziele.<br>
+            Anwendung: Dringender Bedarf an einem Schlüsselspieler oder einer spezifischen Position.</li>
+
+            <li><strong>1,6+: Notfall</strong><br>
+            Beschreibung: Der Spieler ist unverzichtbar für den sofortigen Erfolg deines Teams.<br>
+            Anwendung: Selten, aber gerechtfertigt, wenn die Position ohne Alternative bleibt.</li>
+        </ul>
+
+        <h4>Faktoren zur Bestimmung</h4>
+        <ul>
+            <li>Teamzusammensetzung: Welche Positionen sind gut besetzt, wo gibt es Lücken?</li>
+            <li>Verletzungen/Sperren: Gibt es Spieler, die bald ausfallen?</li>
+            <li>Marktsituation: Gibt es viele oder wenige Alternativen auf dem Markt?</li>
+            <li>Strategische Überlegungen: Passt der Spieler in deine langfristige Teamstrategie?</li>
+        </ul>
+
+        <h3>Beispielhafte Anwendung der Faktoren</h3>
+        <h4>Szenario 1: Kauf eines aufstrebenden jungen Stürmers</h4>
+        <p><strong>Marktwert:</strong> 8 Millionen<br>
+        <strong>Leistungsfaktor:</strong> 1,3 (Aufgrund guter Form und eines leichten Spielplans)<br>
+        <strong>Bedarfsfaktor:</strong> 1,1 (Du hast bereits zwei starke Stürmer, aber brauchst einen Backup)<br>
+        <strong>Strategieaufschlag:</strong> 500.000</p>
+        <p><strong>Overpay</strong> = 8 Mio. × 1,3 × 1,1 + 0,5 Mio. = 11,9 Mio.</p>
+
+        <h4>Szenario 2: Notwendiger Transfer eines Stammverteidigers</h4>
+        <p><strong>Marktwert:</strong> 5 Millionen<br>
+        <strong>Leistungsfaktor:</strong> 1,2 (Der Spieler ist bekannt für seine konstante Verteidigung)<br>
+        <strong>Bedarfsfaktor:</strong> 1,5 (Akuter Bedarf aufgrund Verletzungen im Kader)<br>
+        <strong>Strategieaufschlag:</strong> 300.000</p>
+        <p><strong>Overpay</strong> = 5 Mio. × 1,2 × 1,5 + 0,3 Mio. = 9,3 Mio.</p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
 </body>
 </html>
